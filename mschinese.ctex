@@ -1,0 +1,104 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                         %
+% Typescripts for Microsoft Office Chinese Truetype fonts %
+%                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% STSong
+\starttypescript [serif] [stsong]
+    \definefontsynonym [STSongRegular] [name:STSong] [features=chinese]
+\stoptypescript
+
+\starttypescript [serif] [stsong]
+    \setups[font:fallback:sans]
+    \definefontsynonym [Serif] [STSongRegular] [features=chinese]
+\stoptypescript
+
+\starttypescript [stsong]
+    \definetypeface [\typescriptone] [rm] [serif] [\typescriptone] [default]
+\stoptypescript
+
+% STKaiti -- italic type
+\starttypescript [serif] [stkaiti]
+    \definefontsynonym [STKaitiRegular] [name:STKaiti] [features=chinese]
+\stoptypescript
+
+\starttypescript [serif] [stkaiti]
+    \setups[font:fallback:sans]
+    \definefontsynonym [Serif] [STKaitiRegular] [features=chinese]
+\stoptypescript
+
+\starttypescript [stkaiti]
+    \definetypeface [\typescriptone] [rm] [serif] [\typescriptone] [default]
+\stoptypescript
+
+% STZHongsong -- bold
+
+\starttypescript [serif] [stzhongsong]
+    \definefontsynonym [STZHongsong] [name:STZHongsong] [features=chinese]
+    \definefontsynonym [STZHongsongRegular] [name:STZHongsong] [features=chinese]
+\stoptypescript
+
+\starttypescript [serif] [stzhongsong]
+    \setups[font:fallback:serif]
+    \definefontsynonym [Serif]    [STZHongsong]   [features=chinese]
+\stoptypescript
+
+\starttypescript [stzhongsong]
+    \definetypeface [\typescriptone] [rm] [serif] [\typescriptone] [default]
+\stoptypescript
+
+% STXIHei -- sans serif
+
+\starttypescript [sans] [stxihei]
+    \definefontsynonym [STXIHeiRegular] [name:STXIHei] [features=chinese]
+\stoptypescript
+
+\starttypescript [sans] [stxihei]
+    \setups[font:fallback:sans]
+    \definefontsynonym [Sans]     [STXIHeiRegular]   [features=chinese]
+\stoptypescript
+
+\starttypescript [stxihei]
+    \definetypeface [\typescriptone] [ss] [sans] [\typescriptone] [default]
+\stoptypescript
+
+% STFangsong -- light variant
+
+\starttypescript [serif] [stfangsong]
+    \definefontsynonym [STFangsong] [name:STFangsong] [features=chinese]
+    \definefontsynonym [STFangsongRegular] [name:STFangsong] [features=chinese]
+\stoptypescript
+
+\starttypescript [stfangsong]
+    \setups[font:fallback:serif]
+    \definefontsynonym [Serif]     [STFangsongRegular]   [features=chinese]
+\stoptypescript
+
+\starttypescript [stfangsong]
+    \definetypeface [\typescriptone] [rm] [serif] [\typescriptone] [default]
+\stoptypescript
+
+% MS-Office Chinese Font set
+
+\starttypescript [serif] [mschinese]
+    \definefontsynonym [STSong] [name:STSong] [features=chinese]
+    \definefontsynonym [STKaiti] [name:STKaiti] [features=chinese]
+    \definefontsynonym [STZHongsong] [name:STZHongsong] [features=chinese]
+    \definefontsynonym [STXIHei] [name:STXIHei] [features=chinese]
+\stoptypescript
+
+\starttypescript [serif] [mschinese]
+    \usetypescript[serif][fallback]
+    \definefontsynonym [Serif] [STSong] [features=chinese]
+    \definefontsynonym [SerifItalic] [STKaiti] [features=chinese]
+    \definefontsynonym [SerifBold] [STZHongsong] [features=chinese]
+    \definefontsynonym [Sans] [STXIHei] [features=chinese]
+\stoptypescript
+
+\starttypescript[mschinese]
+    \definetypeface [mschinese] [rm] [serif] [mschinese] [default] [features=chinese]
+    \definetypeface [mschinese] [ss] [sans] [mschinese] [default] [features=chinese]
+    \definetypeface [mschinese] [tt] [mono] [modern]
+\stoptypescript
+

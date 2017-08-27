@@ -1,0 +1,85 @@
+\mainlanguage[cn]
+\language[cn]
+\enableregime[utf]
+\setscript[hanzi] % hyphenation
+
+\input mschinese.ctex
+\setupbodyfont [mschinese,12pt]
+
+\setuppagenumber [numberconversion=cn]
+\definestructureconversionset[chinese][numbers][cn]
+\setupheads [sectionconversionset=chinese]
+
+\define[2]\ChineseChapter{第#1章 #2}
+\setuphead[chapter][command=\ChineseChapter,style={\bf\switchtobodyfont[24pt]}]
+\setuphead[section][style={\bf\switchtobodyfont[18pt]}]
+
+
+\setuppagenumbering[state=start,
+    alternative=singlesided,
+    location={footer, center},
+    style={\bf\switchtobodyfont[11pt]}
+]
+
+\starttext
+\chapter{华文字体系列}
+
+在微软提供的 Office 套装中附带了一定数量的中文字体,这些字体是常州华文印刷新技术有限公司制造的。
+这些字体安装在系统字体文件夹下,在使用 \ConTeXt{} 的时候可以酌情使用。在本文档中,我们推荐简体中
+文用户使用此套字体,从使用率上看,各大学都会装有微软的操作系统和微软的 Office ,可以说已经相当普及,
+故做推荐。
+
+\section{字体表}
+
+\startplacetable[title=字体文件概述]
+\bTABLE[frame=off,offset=\dimexpr1mm+1.75pt]
+% Table header
+\setupTABLE[r][first][%
+   rulethickness=2pt,
+   topframe=on,
+   bottomframe=on,
+   background=color,
+   backgroundcolor=gray,
+   align=center,
+]
+% Table footer
+\setupTABLE[r][last][%
+    bottomframe=on,
+    rulethickness=1pt,
+]
+
+\bTABLEhead
+\bTR
+\bTH 字体名\eTH
+\bTH 文件名\eTH
+\bTH PostScript 名\eTH
+\bTH  样例 \eTH
+\eTR
+\eTABLEhead
+\bTABLEbody
+\bTR\bTD 华文宋体 \eTD\bTD {\tt STSONG.TTF}   \eTD\bTD STSong      \eTD\bTD {\switchtobodyfont[stsong] 我能吞下玻璃而不伤身体} \eTD\eTR
+\bTR\bTD 华文中宋 \eTD\bTD {\tt STZHONGS.TTF} \eTD\bTD STZhongsong \eTD\bTD {\switchtobodyfont[stzhongsong] 我能吞下玻璃而不伤身体} \eTD\eTR
+\bTR\bTD 华文细黑 \eTD\bTD {\tt STXIHEI.TTF}  \eTD\bTD STXihei     \eTD\bTD {\switchtobodyfont[stkaiti] 我能吞下玻璃而不伤身体} \eTD\eTR
+\bTR\bTD 华文楷体 \eTD\bTD {\tt STKAITI.TTF}  \eTD\bTD STKaiti     \eTD\bTD {\switchtobodyfont[stxihei] 我能吞下玻璃而不伤身体} \eTD\eTR
+\bTR\bTD 华文仿宋 \eTD\bTD {\tt STFANGSO.TTF} \eTD\bTD STFangsong  \eTD\bTD {\switchtobodyfont[stfangsong] 我能吞下玻璃而不伤身体} \eTD\eTR
+\eTABLEbody
+\eTABLE
+\stopplacetable
+
+\startitemize
+\item \type{\it}: {\it 华文仿宋}
+\item \type{\rm}: {\rm 华文仿宋}
+\item \type{\bf}: {\bf 华文中宋}
+\item \type{\ss}: {\ss 华文细黑}
+\item \type{\tfxx}: {\tfxx 华文仿宋}
+\item \type{\tfx}: {\tfx 华文仿宋}
+\item \type{\tf}: {\tf 华文仿宋}
+\item \type{\tfa}: {\tfa 华文仿宋}
+\item \type{\tfb}: {\tfb  华文仿宋}
+\item \type{\tfc}: {\tfc 华文仿宋}
+\item \type{\tfd}: {\tfd 华文仿宋}
+%\item \type{\tfe}: {\tfe 华文仿宋}
+\stopitemize
+
+\stoptext
+
