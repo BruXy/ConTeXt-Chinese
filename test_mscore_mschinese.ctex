@@ -3,11 +3,10 @@
 \enableregime[utf]
 \setscript[hanzi] % hyphenation
 
-% Fonts
-\input mschinese.ctex
+% Enable fonts
+\usetypescriptfile[mscore]
 \setupbodyfont [mschinese,12pt]
 \usebodyfont   [mschinese-light,12pt]
-
 \definebodyfontenvironment[24pt]
 \definebodyfontenvironment[18pt]
 

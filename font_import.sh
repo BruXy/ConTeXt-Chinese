@@ -38,10 +38,17 @@ URL=http://archive1.village.virginia.edu/spw4s/fonts
 for i in STSONG.TTF STZHONGS.TTF STXIHEI.TTF STKAITI.TTF STFANGSO.TTF
 do
     FILE="$OSFONTDIR/$i"
+    LOWERCASE=$(tr '[A-Z]' '[a-z]' <<< $i)
     if [ ! -f $FILE  ]
     then
         echo $i not found, downloading...
         curl -o $FILE  "$URL/$i"
+    fi
+    # Keeping files only upper-case was causing an error, when
+    # ConTeXt distribution 'mscore' was used.
+    if [ ! -f $LOWERCASE ]
+    then
+        cp -v $OSFONTDIR/$i $OSFONTDIR/$LOWERCASE
     fi
 done
 
@@ -64,5 +71,9 @@ do
 done | tee chinese_fonts.log
 
 # Run test
+# 1. Provided typescript
 context test_mschinese.ctex
+
+# 2. ConTeXt provided 'mscore' typescript
+context test_mscore_mschinese.ctex
 
